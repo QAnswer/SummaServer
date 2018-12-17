@@ -73,7 +73,7 @@ public class Wikidata extends Summarizer {
 				+ "WHERE {"
 				+ "<ENTITY> ?p <OBJECT> . "
 				+ "OPTIONAL { "
-				+ "  ?o <http://wikiba.se/ontology-beta#directClaim> ?p . "
+				+ "  ?o <http://wikiba.se/ontology#directClaim> ?p . "
 				+ "  ?o <http://www.w3.org/2000/01/rdf-schema#label> ?l . "
 				+ "FILTER regex(lang(?l), \"LANG\", \"i\")} } ORDER BY asc(?p) limit 1 ";
 	}
