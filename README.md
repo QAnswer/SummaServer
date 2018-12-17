@@ -43,17 +43,17 @@ The response is encoded using the SUMMA (http://purl.org/voc/summa) and vRank (h
 
 A running demo can be found under:
 
-https://wdaqua-summa-server.univ-st-etienne.fr
+https://qanswer-summa-server.univ-st-etienne.fr
 
-Moreover the summa server is used by the question answering system WDAqua-core0. A demo can be found at:
+Moreover the summa server is used by the question answering system QAnswer-core0. A demo can be found at:
 
-www.wdaqua.eu/qa
+www.qanswer.eu/qa
 
 ## Extending to a new Knowledge Base (KB)
 
 In the following we want to explain how to extend the service to new Knowledge Bases. As a running example we use the conrete case of the Wikidata KB.
 
-- You need to set up a triplestore containing the KB together with the PageRank scores expressed in the vRank vocabulary. The PageRank scores can be computed using the command line tool [PageRankRDF]{https://github.com/WDAqua/PageRankRDF}. We generally relay on SPARQL endpoints over HDT files like describe [here](https://github.com/rdfhdt/hdt-java/tree/master/hdt-fuseki).
+- You need to set up a triplestore containing the KB together with the PageRank scores expressed in the vRank vocabulary. The PageRank scores can be computed using the command line tool [PageRankRDF]{https://github.com/Qanswer/PageRankRDF}. We generally relay on SPARQL endpoints over HDT files like describe [here](https://github.com/rdfhdt/hdt-java/tree/master/hdt-fuseki).
 
 - Next you have to implement the following [abstract class](src/main/java/edu/kit/aifb/summarizer/Summarizer.java). This basically reduces to the following:
 
@@ -99,7 +99,7 @@ In the following we want to explain how to extend the service to new Knowledge B
         WHERE {
             <ENTITY> ?p <OBJECT> . 
             OPTIONAL { 
-                ?o <http://wikiba.se/ontology-beta#directClaim> ?p . 
+                ?o <http://wikiba.se/ontology#directClaim> ?p . 
                 ?o rdfs:label ?l . 
                 FILTER regex(lang(?l), "LANG", "i")
         }}
