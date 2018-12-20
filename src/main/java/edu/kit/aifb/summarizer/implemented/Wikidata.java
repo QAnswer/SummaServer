@@ -31,19 +31,18 @@ public class Wikidata extends Summarizer {
 				"SELECT DISTINCT ?o ?l ?pageRank " +
 				"WHERE { " +
 				"<ENTITY> ?p ?o . " +
-				"PREDICATES" +
+				"PREDICATES " +
 				"FILTER (?p != <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> && " +
 				"?p != <http://www.wikidata.org/prop/direct/P31>  && " +
 				"?p != <http://www.wikidata.org/prop/direct/P735> && " +
 				"?p != <http://www.wikidata.org/prop/direct/P21> && " +
 				"?p != <http://www.wikidata.org/prop/direct/P972> && " +
-				"?p != <http://www.wikidata.org/prop/direct/P421> &&" +
+				"?p != <http://www.wikidata.org/prop/direct/P421> && " +
 				"?p != <http://www.wikidata.org/prop/direct/P1343> ) " +
 				"?o <http://www.w3.org/2000/01/rdf-schema#label> ?l . " +
 				"FILTER STRENDS(lang(?l), \"LANG\") . " +
-				"graph <http://wikidata.com/pageRank> { " +
 				"?o <http://purl.org/voc/vrank#pagerank> ?pageRank . " +
-				"}} " +
+				"} " +
 				"ORDER BY DESC (?pageRank) LIMIT TOPK ";
 	}
 
@@ -52,18 +51,17 @@ public class Wikidata extends Summarizer {
 				"SELECT DISTINCT ?o ?l ?pageRank " +
 				"WHERE { " +
 				"?o ?p <ENTITY> . " +
-				"PREDICATES" +
+				"PREDICATES " +
 				"FILTER (?p != <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> && " +
 				"?p != <http://www.wikidata.org/prop/direct/P31>  && " +
-				"?p != <http://www.wikidata.org/prop/direct/P735> &&" +
-				"?p != <http://www.wikidata.org/prop/direct/P21> &&" +
-				"?p != <http://www.wikidata.org/prop/direct/P972> &&" +
+				"?p != <http://www.wikidata.org/prop/direct/P735> && " +
+				"?p != <http://www.wikidata.org/prop/direct/P21> && " +
+				"?p != <http://www.wikidata.org/prop/direct/P972> && " +
 				"?p != <http://www.wikidata.org/prop/direct/P421>) " +
 				"?o <http://www.w3.org/2000/01/rdf-schema#label> ?l . " +
 				"FILTER STRENDS(lang(?l), \"LANG\") . " +
-				"graph <http://wikidata.com/pageRank> { " +
 				"?o <http://purl.org/voc/vrank#pagerank> ?pageRank . " +
-				"}} " +
+				"} " +
 				"ORDER BY DESC (?pageRank) LIMIT TOPK ";
 	}
 
