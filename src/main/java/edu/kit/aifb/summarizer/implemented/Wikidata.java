@@ -23,7 +23,7 @@ public class Wikidata extends Summarizer {
 	public String getQuery0(){
 		return "SELECT DISTINCT ?l WHERE { "
 				+ "OPTIONAL {<ENTITY> <http://www.w3.org/2000/01/rdf-schema#label> ?l . "
-				+ "FILTER regex(lang(?l), \"^LANG(-.*)?$\", \"i\") . }}";
+				+ "FILTER regex(lang(?l), \"LANG\", \"i\") . }}";
 	}
 
 	public String getQuery1(){
@@ -41,7 +41,7 @@ public class Wikidata extends Summarizer {
 				"?p != <http://www.wikidata.org/prop/direct/P1343> && " +
                                 "?p != <http://www.wikidata.org/prop/direct/P5008>) " +
 				"?o <http://www.w3.org/2000/01/rdf-schema#label> ?l . " +
-				"FILTER regex(lang(?l), \"^LANG(-.*)?$\", \"i\") "+
+				"FILTER regex(lang(?l), \"LANG$\", \"i\") "+
 				"?o <http://purl.org/voc/vrank#pagerank> ?pageRank . " +
 				"} " +
 				"ORDER BY DESC (?pageRank) LIMIT TOPK ";
@@ -61,7 +61,7 @@ public class Wikidata extends Summarizer {
 				"?p != <http://www.wikidata.org/prop/direct/P421> && " +
                                 "?p != <http://www.wikidata.org/prop/direct/P5008>) " +
 				"?o <http://www.w3.org/2000/01/rdf-schema#label> ?l . " +
-				"FILTER regex(lang(?l), \"^LANG[-.*]$\", \"i\") "+
+				"FILTER regex(lang(?l), \"LANG$\", \"i\") "+
 				"?o <http://purl.org/voc/vrank#pagerank> ?pageRank . " +
 				"} " +
 				"ORDER BY DESC (?pageRank) LIMIT TOPK ";
@@ -75,7 +75,7 @@ public class Wikidata extends Summarizer {
 				+ "OPTIONAL { "
 				+ "  ?o <http://wikiba.se/ontology#directClaim> ?p . "
 				+ "  ?o <http://www.w3.org/2000/01/rdf-schema#label> ?l . "
-				+ "FILTER regex(lang(?l), \"^LANG(-.*)?$\", \"i\")} } ORDER BY asc(?p) limit 1 ";
+				+ "FILTER regex(lang(?l), \"LANG$\", \"i\")} } ORDER BY asc(?p) limit 1 ";
 	}
 
 	public String getQuery2b(){
@@ -86,7 +86,7 @@ public class Wikidata extends Summarizer {
 				+ "OPTIONAL { "
 				+ "  ?o <http://wikiba.se/ontology-beta#directClaim> ?p . "
 				+ "  ?o <http://www.w3.org/2000/01/rdf-schema#label> ?l . "
-				+ "FILTER regex(lang(?l), \"^LANG(-.*)?$\", \"i\")} } ORDER BY asc(?p) limit 1 ";
+				+ "FILTER regex(lang(?l), \"LANG$\", \"i\")} } ORDER BY asc(?p) limit 1 ";
 	}
 
 }
