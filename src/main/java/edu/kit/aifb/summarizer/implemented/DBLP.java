@@ -12,7 +12,7 @@ public class DBLP extends Summarizer {
 	}
 
 	public String getRepository(){
-		return "https://wdaqua.univ-st-etienne.fr/hdt-endpoint/dblp/sparql";
+		return "http://qanswer-core1.univ-st-etienne.fr/api/endpoint/dblp/sparql";
 	};
 
 	public String getQuery0(){

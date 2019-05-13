@@ -17,7 +17,7 @@ public class DBpedia extends Summarizer {
 	}
 
 	public String getRepository(){
-		return "https://qanswer-hdt-endpoint.univ-st-etienne.fr/dbpedia_2016_10/sparql";
+		return "http://qanswer-core1.univ-st-etienne.fr/api/endpoint/dbpedia/sparql";
 	}
 
 	public String getQuery0(){

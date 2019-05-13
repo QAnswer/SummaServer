@@ -12,7 +12,7 @@ public class MusicBrainz extends Summarizer {
 	}
 
 	public String getRepository(){
-		return "http://qanswer-hdt-endpoint.univ-st-etienne.fr/musicbrainz/sparql";
+		return "http://qanswer-core1.univ-st-etienne.fr/api/endpoint/musicbrainz/sparql";
 	}
 
 	public String getQuery0(){
