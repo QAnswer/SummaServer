@@ -41,11 +41,7 @@ The response is encoded using the SUMMA (http://purl.org/voc/summa) and vRank (h
 
 ## Demo
 
-A running demo can be found under:
-
-https://qanswer-summa-server.univ-st-etienne.fr
-
-Moreover the summa server is used by the question answering system QAnswer-core0. A demo can be found at:
+The summa server is used by the question answering system QAnswer-core0. A demo can be found at:
 
 www.qanswer.eu/qa
 
